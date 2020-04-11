@@ -1,17 +1,19 @@
 Obedient Oatmeal
 ================
 
-This is a fun script written in [Python3](https://www.python.org/downloads/) to generate random band names.
+This is a fun script written in [Python3](https://www.python.org/downloads/) to generate random band names using nouns and adjectives parsed from text files.
 
-As configured the script will generate a name of between 1 and 4 words. If the length of the name is 1, it will be a noun. If it is greater than 1, any of the words except the last may be adjectives.
+![Obedient Oatmeal sample](https://raw.githubusercontent.com/oishiiburger/obedientoatmeal/master/img/example.gif)
 
-The `noun.csv` and `adj.csv` contain a noun list and adjective list, respectively, in comma-separated value format.
+The script parses and tags a plaintext input file (using [nltk](https://www.nltk.org/)) and collects nouns and adjectives. It then generates some number of band names consisting of between 2 and 4 words (as configured). Any of the words except for the last may be adjectives, and the last must be a noun.
+
+Encoding of the plaintext input file is assessed by [chardet](https://github.com/chardet/chardet). NLTK must have the `punkt` module for sentence tokenizing and the `averaged perceptron tagger` installed; the script will prompt to install them if they are not found.
 
 Usage
 -----
 
-From the directory which contains all the files:
+From the command line:
 
 ```
-python3 obedientoatmeal.py
+(python) obedientoatmeal.py filename_to_parse [number_of_band_names_to_generate]
 ```
