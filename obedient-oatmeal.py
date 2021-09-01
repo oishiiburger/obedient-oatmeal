@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Obedient Oatmeal
 # Chris Graham, 2020
 # https://github.com/oishiiburger/obedientoatmeal
@@ -57,7 +59,7 @@ def generateName(filename, number):
 					if tag_tuple[0] not in adjs:
 						adjs.append(tag_tuple[0])
 	print('\n')
-	for i in range(0, number):
+	for j in range(0, number):
 		# change range below for shorter or longer band names
 		length = random.randrange(2,4)
 		name = ''
@@ -74,7 +76,7 @@ def generateName(filename, number):
 				name += nouns[random.randrange(0,len(nouns)-1)].capitalize()
 			if i != length-1:
 				name += ' '
-		print(name)
+		print(f'{j+1}\t{name}')
 
 def main():
 	# see if punkt is already installed
